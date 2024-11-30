@@ -6,11 +6,11 @@ def intToRoman(num: int) -> str:
             int_to_roman+='M'
         num = num - number_M*1000
         number_CM = num//900
-        for i in range(number_CM):
+        if number_CM == 1:
             int_to_roman+='CM'
         num = num - number_CM*900
         number_D = num//500
-        for i in range(number_D):
+        if number_D == 1:
             int_to_roman+='D'
         num = num - number_D*500
         number_C = num//100
@@ -21,11 +21,11 @@ def intToRoman(num: int) -> str:
                 int_to_roman+='C'
         num = num - number_C*100
         number_XC = num//90
-        for i in range(number_XC):
+        if number_XC == 1:
             int_to_roman+='XC'
         num = num - number_XC*90
         number_L = num//50
-        for i in range(number_L):
+        if number_L == 1:
             int_to_roman+='L'
         num = num - number_L *50
         number_X = num//10
@@ -39,7 +39,7 @@ def intToRoman(num: int) -> str:
             int_to_roman+='IX'
         else:
             number_V = num//5
-            for i in range(number_V):
+            if number_V == 1:
                 int_to_roman+='V'
             number_I = num - number_V*5
             if(number_I==4):
